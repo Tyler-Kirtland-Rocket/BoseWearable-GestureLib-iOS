@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BoseGestureRecognizer Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/BoseGestureRecognizer" class="dashAnchor"></a>
+
+    <a title="BoseGestureRecognizer Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          BoseGesture Docs
+        </a>
+         (96% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">BoseGesture Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      BoseGestureRecognizer Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../installation.html">Installation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../sample-code.html">Sample Code</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../usage.html">Usage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BoseGesture.html">BoseGesture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BoseGestureRecognizer.html">BoseGestureRecognizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums.html#/s:11BoseGesture0aB5ErrorO">BoseGestureError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/BoseGestureType.html">BoseGestureType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>BoseGestureRecognizer</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BoseGestureRecognizer</span></code></pre>
+
+                </div>
+              </div>
+            <p>Base Gesture recognizer class, common to specific recognizer implementations.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BoseGesture0aB10RecognizerC15enabledGesturesShyAA0aB4TypeOGvp"></a>
+                    <a name="//apple_ref/swift/Property/enabledGestures" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BoseGesture0aB10RecognizerC15enabledGesturesShyAA0aB4TypeOGvp">enabledGestures</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set of gestures that will be detected by the library. It defaults to all available gestures.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">enabledGestures</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt"><a href="../Enums/BoseGestureType.html">BoseGestureType</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BoseGesture0aB10RecognizerC19gestureDataCallbackyAA0aB4TypeO_SitcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/gestureDataCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BoseGesture0aB10RecognizerC19gestureDataCallbackyAA0aB4TypeO_SitcSgvp">gestureDataCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This will get called with a gesture —if any is detected—.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">gestureDataCallback</span><span class="p">:</span> <span class="p">((</span><span class="kt"><a href="../Enums/BoseGestureType.html">BoseGestureType</a></span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BoseGesture0aB10RecognizerC22startDetectingGestures7timeout15gestureCallbackySdSg_yAA0aB4TypeO_SitctF"></a>
+                    <a name="//apple_ref/swift/Method/startDetectingGestures(timeout:gestureCallback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BoseGesture0aB10RecognizerC22startDetectingGestures7timeout15gestureCallbackySdSg_yAA0aB4TypeO_SitctF">startDetectingGestures(timeout:gestureCallback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts recognizing gestures. Optionally it can automatically stop recognizing after a given time interval.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">startDetectingGestures</span><span class="p">(</span><span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">gestureCallback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt"><a href="../Enums/BoseGestureType.html">BoseGestureType</a></span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a time interval in seconds after which gesture recognition will stop.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gestureCallback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a function that will get called when a gesture has been detected.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BoseGesture0aB10RecognizerC21stopDetectingGesturesyyF"></a>
+                    <a name="//apple_ref/swift/Method/stopDetectingGestures()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BoseGesture0aB10RecognizerC21stopDetectingGesturesyyF">stopDetectingGestures()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>It stops detecting gestures and invalidates the previously set timer and callback</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">stopDetectingGestures</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BoseGesture0aB10RecognizerC19appendAccelerometer4data8accuracy9timestampys5SIMD3VySdG_0A8Wearable14VectorAccuracyOs6UInt16VtF"></a>
+                    <a name="//apple_ref/swift/Method/appendAccelerometer(data:accuracy:timestamp:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BoseGesture0aB10RecognizerC19appendAccelerometer4data8accuracy9timestampys5SIMD3VySdG_0A8Wearable14VectorAccuracyOs6UInt16VtF">appendAccelerometer(data:accuracy:timestamp:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Call this function to feed accelerometer data into the gesture recognizer.
+It shares the same signature as the Wearable SDK&rsquo;s sensor data callbacks, so it&rsquo;s just a matter of adding this on the accelerometer callback from the SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">appendAccelerometer</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">,</span> <span class="nv">accuracy</span><span class="p">:</span> <span class="kt">VectorAccuracy</span><span class="p">,</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="kt">SensorTimestamp</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BoseGesture0aB10RecognizerC15appendGyroscope4data8accuracy9timestampys5SIMD3VySdG_0A8Wearable14VectorAccuracyOs6UInt16VtF"></a>
+                    <a name="//apple_ref/swift/Method/appendGyroscope(data:accuracy:timestamp:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BoseGesture0aB10RecognizerC15appendGyroscope4data8accuracy9timestampys5SIMD3VySdG_0A8Wearable14VectorAccuracyOs6UInt16VtF">appendGyroscope(data:accuracy:timestamp:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Call this function to feed gyroscope data into the gesture recognizer.
+It shares the same signature as the Wearable SDK&rsquo;s sensor data callbacks, so it&rsquo;s just a matter of adding this on the gyroscope callback from the SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">appendGyroscope</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">,</span> <span class="nv">accuracy</span><span class="p">:</span> <span class="kt">VectorAccuracy</span><span class="p">,</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="kt">SensorTimestamp</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BoseGesture0aB10RecognizerC5flushyyF"></a>
+                    <a name="//apple_ref/swift/Method/flush()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BoseGesture0aB10RecognizerC5flushyyF">flush()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clear any history of or pertaining to sensor data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">flush</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://developer.bose.com" target="_blank" rel="external">Bose Corporation</a>. All rights reserved. (Last updated: 2019-10-31)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

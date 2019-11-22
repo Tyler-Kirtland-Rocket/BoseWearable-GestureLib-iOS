@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Usage  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="Usage  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          BoseGesture Docs
+        </a>
+         (96% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">BoseGesture Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Usage  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="installation.html">Installation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="sample-code.html">Sample Code</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="usage.html">Usage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/BoseGesture.html">BoseGesture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/BoseGestureRecognizer.html">BoseGestureRecognizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums.html#/s:11BoseGesture0aB5ErrorO">BoseGestureError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/BoseGestureType.html">BoseGestureType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <h1 id='usage' class='heading'>Usage</h1>
+
+<p>This document describes how to use the Bose Gesture Library in your app.</p>
+
+<ul>
+<li><a href="#client-app-requirements">Client App Requirements</a></li>
+<li><a href="#configuring-and-initializing-the-library">Configuring and Initializing the Library</a></li>
+<li><a href="#recognizing-gestures">Recognizing Gestures</a></li>
+</ul>
+<h2 id='client-app-requirements' class='heading'>Client App Requirements</h2>
+
+<p>The Gesture Library detects gestures performed while wearing a Bose AR device. In order to connect to the device and communicate with it, the App must first link against the Bose Wearable SDK.</p>
+<h2 id='configuring-and-initializing-the-library' class='heading'>Configuring and Initializing the Library</h2>
+
+<p>Before using the Bose Wearable library, you will need to call <code>BoseWearable.configure(_:)</code>. We recommend doing so in your app delegate. For example:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+    <span class="c1">// ...</span>
+
+    <span class="c1">// Configure the BoseWearable SDK.</span>
+    <span class="kt">BoseWearable</span><span class="o">.</span><span class="nf">configure</span><span class="p">()</span>
+
+    <span class="c1">// Configure and authenticate the BoseGesture library using our own API key.</span>
+    <span class="kt">BoseGesture</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">analyticsOn</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+        <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">success</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"BoseGesture configured"</span><span class="p">)</span>
+
+        <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"BoseGesture failed: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The <code><a href="Classes/BoseGesture.html#/s:11BoseGestureAAC9configure11analyticsOnySb_tFZ">BoseGesture.configure(analyticsOn:)</a></code> method takes a boolean flag toggling analytics tracking as its only parameter (by default, analytics are not enabled). See the documentation for more details.</p>
+<h2 id='recognizing-gestures' class='heading'>Recognizing Gestures</h2>
+<h3 id='feeding-sensor-data' class='heading'>Feeding Sensor Data</h3>
+
+<p>The <code><a href="Classes/BoseGesture.html">BoseGesture</a></code> library uses the Bose AR device sensor data to detect gestures, so we need to feed the sensor data from the <code>BoseWearable SDK</code> into the <code><a href="Classes/BoseGesture.html">BoseGesture</a></code> library. Specifically, the Accelerometer and Gyroscope sensors. You should enable the sensors at a 10 MS sample period. To learn more on configuring and activating these sensors please look at the BoseWearable SDK documentation. Once the sensors are enabled, just pass the sensor data into the Gesture Recognizer:</p>
+<pre class="highlight swift"><code>    <span class="c1">// Wearable SDK accelerometer callback</span>
+    <span class="kd">func</span> <span class="nf">receivedAccelerometer</span><span class="p">(</span><span class="nv">vector</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">,</span> <span class="nv">accuracy</span><span class="p">:</span> <span class="kt">VectorAccuracy</span><span class="p">,</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="kt">SensorTimestamp</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// Pass the accelerometer sensor data into the BoseGesture library.</span>
+        <span class="kt">BoseGesture</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="nf">appendAccelerometer</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">vector</span><span class="p">,</span> <span class="nv">accuracy</span><span class="p">:</span> <span class="n">accuracy</span><span class="p">,</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Wearable SDK gyroscope callback</span>
+    <span class="kd">func</span> <span class="nf">receivedGyroscope</span><span class="p">(</span><span class="nv">vector</span><span class="p">:</span> <span class="kt">Vector</span><span class="p">,</span> <span class="nv">accuracy</span><span class="p">:</span> <span class="kt">VectorAccuracy</span><span class="p">,</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="kt">SensorTimestamp</span><span class="p">)</span>  <span class="p">{</span>
+
+        <span class="c1">// Pass the gyroscope sensor data into the BoseGesture library.</span>
+        <span class="kt">BoseGesture</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="nf">appendGyroscope</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">vector</span><span class="p">,</span> <span class="nv">accuracy</span><span class="p">:</span> <span class="n">accuracy</span><span class="p">,</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre>
+<h3 id='recognizing-gestures' class='heading'>Recognizing Gestures</h3>
+
+<p>Once the BoseWearable SDK is configured, both the accelerometer and gyroscope sensors are enabled and delegated to the BoseGesture library as shown above, the final step is to call <code>startDetectingGestures()</code> on the gesture recognizer as follows:</p>
+<pre class="highlight swift"><code>    <span class="c1">// Start listening for gestures.</span>
+    <span class="kt">BoseGesture</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="nf">startDetectingGestures</span><span class="p">()</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">gesture</span><span class="p">,</span> <span class="n">confidence</span> <span class="k">in</span>
+        <span class="k">switch</span> <span class="n">gesture</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">lookDown</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Looking down"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">headNod</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Yes!"</span><span class="p">)</span>
+        <span class="k">default</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Some other gesture"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
+
+<p>The <code>confidence</code> parameter will indicate how likely it is that the given gesture is actually that gesture.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://developer.bose.com" target="_blank" rel="external">Bose Corporation</a>. All rights reserved. (Last updated: 2019-10-31)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
