@@ -24,4 +24,4 @@ See the [Usage Guide](docs/Usage.md) for detailed information about how to use t
 
 ## Documentation
 
-Visit [BoseGesture Reference](https://bosecorp.github.io/BoseWearable-GestureLib-iOS-bin/index.html) for complete documentation. 
+Visit [BoseGesture Reference](https://bose.github.io/BoseWearable-GestureLib-iOS/) for complete documentation. 
