@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
     s.author        = "Bose Corporation"
     s.source        = { :git => "git@github.com:BoseCorp/BoseWearable-GestureLib-iOS-src.git", :tag => "#{s.version}" }
-    s.license       = { :type => "Proprietary", :text => "Bose Confidential" }
+    s.license       = { :type => "MIT" }
 
     s.platform      = :ios, "12.0"
     s.swift_version = "5.1"
