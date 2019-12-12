@@ -10,8 +10,6 @@ In order to install the Bose Gesture Library as a pod in your project, add it to
 platform :ios, '12.0'
 use_frameworks!
 
-source 'git@github.com:Bose/BoseWearableSpecs.git'
-
 target 'MyApp' do
     pod 'BoseGesture'
 end

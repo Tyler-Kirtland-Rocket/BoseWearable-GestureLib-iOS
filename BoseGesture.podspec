@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.homepage      = "https://developer.bose.com"
 
     s.author        = "Bose Corporation"
-    s.source        = { :git => "git@github.com:BoseCorp/BoseWearable-GestureLib-iOS-src.git", :tag => "#{s.version}" }
+    s.source        = { :git => "https://github.com/Bose/BoseWearable-GestureLib-iOS.git", :tag => "#{s.version}" }
     s.license       = { :type => "MIT" }
 
     s.platform      = :ios, "12.0"
@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
 
     s.dependency "BoseWearable"
     s.dependency "BLECore"
-    s.dependency "Logging"
+    s.dependency "BoseLogging"
     s.weak_frameworks = 'BoseWearable', 'Logging', 'BLECore'
   end
