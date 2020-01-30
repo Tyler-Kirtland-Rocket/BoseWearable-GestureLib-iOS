@@ -49,6 +49,13 @@ internal class BoseMLGestureRecognizer: BoseGestureRecognizer {
         static let minConfidenceThreshold = 80
     }
 
+    /// Set MLPredictionOptions based on cpuMode
+    private var predictionOptions: MLPredictionOptions {
+        let options = MLPredictionOptions()
+        options.usesCPUOnly = cpuMode
+        return options
+    }
+
     /// Buffer for storing accel and gyro data
     private var accelDataBuffer = SensorData(bufferLength: Constants.samplesPerSensorDim, dataType: .vector3d)
     private var gyroDataBuffer = SensorData(bufferLength: Constants.samplesPerSensorDim, dataType: .vector3d)
@@ -136,7 +143,7 @@ internal class BoseMLGestureRecognizer: BoseGestureRecognizer {
             guard let dataBuffer = aggregatedDataBuffer else {
                 return
             }
-            if let gestureResult = try? gestureRecognitionModel.prediction(input: BoseMLGestureModelInput(IMU_Sensor_Bose_Frames: dataBuffer)) {
+            if let gestureResult = try? gestureRecognitionModel.prediction(input: BoseMLGestureModelInput(IMU_Sensor_Bose_Frames: dataBuffer), options: predictionOptions) {
                 (predictedGesture, predictedConfidence) = postProcessPrediction(gestureResult: gestureResult)
             }
             resetSensorsNewDataCount()

@@ -14,6 +14,9 @@ import Foundation
  */
 public class BoseGestureRecognizer {
 
+    /// Enable/Disable GPU predictions
+    public var cpuMode = false
+
     /// Set of gestures that will be detected by the library. It defaults to all available gestures.
     public var enabledGestures = Set(BoseGestureType.all)
 
