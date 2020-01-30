@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name          = "BoseGesture"
-    s.version       = "1.1.3"
+    s.version       = "1.1.4"
     s.summary       = "Bose Gesture Library"
 
     s.description   = <<-DESC
