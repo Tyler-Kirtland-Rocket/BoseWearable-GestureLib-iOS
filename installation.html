@@ -84,7 +84,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             
             <h1 id='installation-guide' class='heading'>Installation Guide</h1>
 
@@ -95,7 +95,7 @@
 <pre class="highlight swift"><code><span class="nv">platform</span> <span class="p">:</span><span class="n">ios</span><span class="p">,</span> <span class="err">'</span><span class="mf">12.0</span><span class="err">'</span>
 <span class="n">use_frameworks</span><span class="o">!</span>
 
-<span class="n">source</span> <span class="err">'</span><span class="nv">https</span><span class="p">:</span><span class="c1">//github.com/BoseCorp/BoseWearable-GestureSpecs-bin'</span>
+<span class="n">source</span> <span class="err">'</span><span class="n">git</span><span class="kd">@github</span><span class="o">.</span><span class="nv">com</span><span class="p">:</span><span class="kt">Bose</span><span class="o">/</span><span class="kt">BoseWearableSpecs</span><span class="o">.</span><span class="n">git</span><span class="err">'</span>
 
 <span class="n">target</span> <span class="err">'</span><span class="kt">MyApp</span><span class="err">'</span> <span class="k">do</span>
     <span class="n">pod</span> <span class="err">'</span><span class="kt">BoseGesture</span><span class="err">'</span>
@@ -107,17 +107,17 @@
 <p>In the example given below, we will assume you have put the contents of the zip file downloaded from GitHub at <code>$PROJECT_DIR/Libraries/BoseGesture</code>, but you may place them anywhere in your source tree. We recommend committing this to source control with the rest of your project.</p>
 
 <ul>
-<li>Open the folder in which you place the unzipped distribution folder. Drag the <code>Frameworks</code> folder into the Project Navigator of your application&rsquo;s Xcode project, dropping it under the target&rsquo;s source folder. In the ensuing sheet, select <q>Copy items if needed</q>, <q>Create groups</q>, and select your app target under <q>Add to targets</q>. This will create the following item in your project:
+<li>Open the folder in which you place the unzipped distribution folder. Drag the <code>Frameworks</code> folder into the Project Navigator of your application&rsquo;s Xcode project, dropping it under the target&rsquo;s source folder. In the ensuing sheet, select &ldquo;Copy items if needed&rdquo;, &ldquo;Create groups&rdquo;, and select your app target under &ldquo;Add to targets&rdquo;. This will create the following item in your project:
 
 <ul>
 <li><code>Frameworks/BoseGesture.framework</code></li>
 </ul></li>
-<li>Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the <q>Targets</q> heading in the sidebar.</li>
-<li>In the tab bar at the top of that window, open the <q>General</q> panel.</li>
-<li>Click on the <code>+</code> button under the <q>Embedded Binaries</q> section.</li>
+<li>Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the &ldquo;Targets&rdquo; heading in the sidebar.</li>
+<li>In the tab bar at the top of that window, open the &ldquo;General&rdquo; panel.</li>
+<li>Click on the <code>+</code> button under the &ldquo;Embedded Binaries&rdquo; section.</li>
 <li>The newly-included <code>framework</code> will appear.</li>
 <li>Select the frameworks: <code>BoseGesture.framework</code>.</li>
-<li>Go to your target&rsquo;s <q>Build Settings</q> panel and search for &lsquo;Framework Search Paths&rsquo;.</li>
+<li>Go to your target&rsquo;s &ldquo;Build Settings&rdquo; panel and search for &lsquo;Framework Search Paths&rsquo;.</li>
 <li>Set the value to $(SRCROOT)/../Libraries/Frameworks. Note that your individual project structure may differ, you should set this value to be where the &lsquo;Frameworks&rsquo; folder you unzipped is located.</li>
 <li>Build and run your project to verify this all worked.</li>
 </ul>
@@ -130,11 +130,11 @@
 
 <p>A binary that contains the simulator architecture will be rejected by Apple when submitting to the App Store or TestFlight. To remedy this, you need to add a script to your build process that strips unused frameworks from your app&rsquo;s build.</p>
 
-<p>On the <q>Build Phases</q> tab of your app target, add a <q>Run Script</q> phase with the command:</p>
+<p>On the &ldquo;Build Phases&rdquo; tab of your app target, add a &ldquo;Run Script&rdquo; phase with the command:</p>
 <pre class="highlight shell"><code>bash <span class="s2">"</span><span class="k">${</span><span class="nv">PROJECT_DIR</span><span class="k">}</span><span class="s2">/Libraries/BoseGesture/bin/strip-frameworks.sh"</span>
 </code></pre>
 
-<p>Check the <q>Run script only when installing</q> checkbox.</p>
+<p>Check the &ldquo;Run script only when installing&rdquo; checkbox.</p>
 
 <p>This phase should be the last phase for your target.</p>
 
@@ -145,8 +145,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://developer.bose.com" target="_blank" rel="external">Bose Corporation</a>. All rights reserved. (Last updated: 2019-10-31)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://developer.bose.com" target="_blank" rel="external">Bose Corporation</a>. All rights reserved. (Last updated: 2020-01-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
