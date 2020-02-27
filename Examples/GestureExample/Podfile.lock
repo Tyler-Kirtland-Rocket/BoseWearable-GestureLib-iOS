@@ -1,14 +1,14 @@
 PODS:
-  - BLECore (4.0.19):
-    - BoseLogging (= 4.0.19)
-  - BoseGesture (1.1.4):
+  - BLECore (4.0.24):
+    - BoseLogging (= 4.0.24)
+  - BoseGesture (1.1.3):
     - BLECore
     - BoseLogging
     - BoseWearable
-  - BoseLogging (4.0.19)
-  - BoseWearable (4.0.19):
-    - BLECore (= 4.0.19)
-    - BoseLogging (= 4.0.19)
+  - BoseLogging (4.0.24)
+  - BoseWearable (4.0.24):
+    - BLECore (= 4.0.24)
+    - BoseLogging (= 4.0.24)
 
 DEPENDENCIES:
   - BoseGesture (from `../../`)
@@ -25,10 +25,10 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  BLECore: a6961dd25ee20282720c0703bcc6c9b54e7bf240
-  BoseGesture: e5515950d34ebc250d3cb185dd2463edecf22ee4
-  BoseLogging: 4eeb2052286ebc1654f55456a0b90e6649a33430
-  BoseWearable: b5bf525f5ef27962a5fd65084ed9412b0816af99
+  BLECore: fbbb0edfa588fd057b108ed59826f525864fe1aa
+  BoseGesture: a23e3f7b27c102cb4fbce3057156d10d5b2f03c8
+  BoseLogging: 0b6a9c10d58b5098960e8cf59f978c99c05ccfb4
+  BoseWearable: b8bbd451a0cdd6b04ff711663025a90c026ea22d
 
 PODFILE CHECKSUM: 23936e74d217fbee58847f2c2b2597811ea978e0
 
