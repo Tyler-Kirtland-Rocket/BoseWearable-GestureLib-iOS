@@ -23,23 +23,16 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // Configure the BoseWearable SDK.
     BoseWearable.configure()
 
-    // Configure and authenticate the BoseGesture library using our own API key.
-    BoseGesture.configure(analyticsOn: Bool = false) { result in
-        switch result {
-        case .success:
-            print("BoseGesture configured")
-
-        case .failure(let error):
-            print("BoseGesture failed: \(error.localizedDescription)")
-        }
-    }
+    // Configure the BoseGesture library.
+    BoseGesture.configure() 
+    
     // ...
 
     return true
 }
 ```
 
-The `BoseGesture.configure(analyticsOn:)` method takes a boolean flag toggling analytics tracking as its only parameter (by default, analytics are not enabled). See the documentation for more details.
+See the documentation for more details.
 
 ## Recognizing Gestures
 
