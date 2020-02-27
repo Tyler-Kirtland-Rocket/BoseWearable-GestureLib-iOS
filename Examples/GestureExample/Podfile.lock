@@ -1,35 +1,34 @@
 PODS:
-  - BLECore (4.0.19):
-    - BoseLogging (= 4.0.19)
+  - BLECore (4.0.24):
+    - BoseLogging (= 4.0.24)
   - BoseGesture (1.1.3):
     - BLECore
     - BoseLogging
     - BoseWearable
-  - BoseLogging (4.0.19)
-  - BoseWearable (4.0.19):
-    - BLECore (= 4.0.19)
-    - BoseLogging (= 4.0.19)
+  - BoseLogging (4.0.24)
+  - BoseWearable (4.0.24):
+    - BLECore (= 4.0.24)
+    - BoseLogging (= 4.0.24)
 
 DEPENDENCIES:
   - BoseGesture (from `../../`)
   - BoseWearable
 
 SPEC REPOS:
-  "git@github.com:Bose/BoseWearableSpecs.git":
-    - BLECore
-    - BoseWearable
   https://github.com/CocoaPods/Specs.git:
+    - BLECore
     - BoseLogging
+    - BoseWearable
 
 EXTERNAL SOURCES:
   BoseGesture:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  BLECore: 8dfd3c5f8eb0f22d85f70792a113a1a5f16f8ad9
-  BoseGesture: 0317b17d180617c09da5222b047ac7454fb5196d
-  BoseLogging: 4eeb2052286ebc1654f55456a0b90e6649a33430
-  BoseWearable: 1cbde7d22de2dc89eb4d37064f4522cb3062f396
+  BLECore: fbbb0edfa588fd057b108ed59826f525864fe1aa
+  BoseGesture: a23e3f7b27c102cb4fbce3057156d10d5b2f03c8
+  BoseLogging: 0b6a9c10d58b5098960e8cf59f978c99c05ccfb4
+  BoseWearable: b8bbd451a0cdd6b04ff711663025a90c026ea22d
 
 PODFILE CHECKSUM: 23936e74d217fbee58847f2c2b2597811ea978e0
 
