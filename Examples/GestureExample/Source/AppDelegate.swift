@@ -10,8 +10,6 @@ import BoseWearable
 import BoseGesture
 import UIKit
 
-typealias BoseWearable = BoseWearableLib
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

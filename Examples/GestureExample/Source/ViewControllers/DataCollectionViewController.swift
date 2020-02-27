@@ -11,9 +11,6 @@ import MessageUI
 class DataCollectionViewController: UIViewController {
 
     private var activityIndicator: ActivityIndicator?
-    
-    // Ready Flags
-    private var sessionConfigured = false
 
     @IBOutlet weak var gestureLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
@@ -64,13 +61,6 @@ class DataCollectionViewController: UIViewController {
 
         sensorDispatch.handler = self as SensorDispatchHandler
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
-          
-      // Configure the Bose BLE connection
-      if !sessionConfigured {
         // Block this view controller's UI before showing the modal search.
         activityIndicator = ActivityIndicator.add(to: navigationController?.view)
 
@@ -81,7 +71,6 @@ class DataCollectionViewController: UIViewController {
             case .success(let session):
                 // A device was selected, a session was created and opened.
                 self.session = session
-                self.sessionDidOpen(session)
 
             case .failure(let error):
                 // An error occurred when searching for or connecting to a
@@ -96,7 +85,6 @@ class DataCollectionViewController: UIViewController {
             // Unblock the UI
             self.activityIndicator?.removeFromSuperview()
         }
-      }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -213,24 +201,20 @@ extension DataCollectionViewController: SensorDispatchHandler {
 extension DataCollectionViewController: WearableDeviceSessionDelegate {
     func sessionDidOpen(_ session: WearableDeviceSession) {
         // The session opened successfully.
-        self.sessionConfigured = true
         
     }
     
     func session(_ session: WearableDeviceSession, didFailToOpenWithError error: Error) {
         // The session failed to open due to an error.
-        self.sessionConfigured = false
         dismiss(dueTo: error)
     }
     
     func session(_ session: WearableDeviceSession, didCloseWithError error: Error) {
         // The session was closed, possibly due to an error.
-        self.sessionConfigured = false
         dismiss(dueTo: error, isClosing: true)
     }
 
     func sessionDidClose(_ session: WearableDeviceSession) {
-        self.sessionConfigured = false
         dismiss(dueTo: nil, isClosing: true)
     }
 }
