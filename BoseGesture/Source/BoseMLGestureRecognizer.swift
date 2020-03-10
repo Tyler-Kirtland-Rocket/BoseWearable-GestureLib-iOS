@@ -46,7 +46,7 @@ internal class BoseMLGestureRecognizer: BoseGestureRecognizer {
         static let maxOccurencesForSuppressing = 6
 
         /// Threshold for reporting detected gesture to client
-        static let minConfidenceThreshold = 60
+        static let minConfidenceThreshold = 50
     }
 
     /// Set MLPredictionOptions based on cpuMode
